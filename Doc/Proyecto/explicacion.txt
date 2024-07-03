@@ -1,0 +1,2 @@
+El proyecto que has proporcionado parece ser una solución de estilo "Clean Architecture" o "Arquitectura de Cebolla" implementada en .NET 5.0, que se compone de varias capas y proyectos, cada uno con un propósito específico. A continuación, describiré la arquitectura encontrada en los archivos proporcionados y luego crearé los diagramas correspondientes para cada vista del modelo 4+1.
+

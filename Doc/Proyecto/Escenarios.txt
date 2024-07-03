@@ -1,0 +1,2 @@
+Escenarios:
+Los escenarios representan instancias de uso del sistema que demuestran las interacciones clave entre los usuarios y el sistema, así como entre los componentes del sistema. Un ejemplo de escenario sería el proceso de autenticación de un usuario a través de la API, donde el usuario envía credenciales, el sistema valida estas credenciales utilizando el proyecto Identity, genera un token JWT y lo devuelve al usuario.

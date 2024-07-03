@@ -1,0 +1,14 @@
+Vista de Proceso:
+La vista de proceso se centra en la ejecución y el comportamiento del sistema en tiempo de ejecución. En esta arquitectura, los clientes interactúan con el sistema a través de la API REST expuesta por el proyecto WebApi. Las solicitudes pasan a través de middleware como ErrorHandlerMiddleware y luego son manejadas por controladores que utilizan servicios y repositorios definidos en otros proyectos para realizar operaciones.
+
+Diagrama de Secuencia
+sequenceDiagram
+    participant Cliente as Cliente
+    participant WebApi as WebApi
+    participant Identity as Identity
+    participant JWT as JWT
+    Cliente->>WebApi: Solicita autenticación
+    WebApi->>Identity: Valida credenciales
+    Identity->>JWT: Crea token JWT
+    JWT-->>WebApi: Token JWT
+    WebApi-->>Cliente: Responde con token JWT

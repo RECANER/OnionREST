@@ -1,0 +1,55 @@
+Vista de Desarrollo:
+La vista de desarrollo muestra cómo el sistema está organizado en módulos, paquetes y componentes. La solución se divide en varios proyectos de C# (.csproj), cada uno representando un módulo o capa en la arquitectura:
+
+
+Application.csproj
+
+Domain.csproj
+
+Identity.csproj
+
+Persistence.csproj
+
+Shared.csproj
+
+WebApi.csproj
+
+Cada proyecto tiene sus propias dependencias y referencias a otros proyectos, lo que facilita la separación de preocupaciones y la gestión de dependencias.
+
+
+Diagrama de Paquetes
+
+graph TD
+    subgraph Application
+    Application_csproj[Application.csproj]
+    end
+
+    subgraph Domain
+    Domain_csproj[Domain.csproj]
+    end
+
+    subgraph Identity
+    Identity_csproj[Identity.csproj]
+    end
+
+    subgraph Persistence
+    Persistence_csproj[Persistence.csproj]
+    end
+
+    subgraph Shared
+    Shared_csproj[Shared.csproj]
+    end
+
+    subgraph WebApi
+    WebApi_csproj[WebApi.csproj]
+    end
+
+    Application_csproj --> Domain_csproj
+    Persistence_csproj --> Domain_csproj
+    Persistence_csproj --> Application_csproj
+    Identity_csproj --> Application_csproj
+    WebApi_csproj --> Application_csproj
+    WebApi_csproj --> Identity_csproj
+    WebApi_csproj --> Persistence_csproj
+    Shared_csproj --> Application_csproj
+

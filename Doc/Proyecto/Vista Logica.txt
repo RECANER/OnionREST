@@ -1,0 +1,14 @@
+Vista Lógica:
+La vista lógica de la arquitectura se centra en la funcionalidad que el sistema proporciona a los usuarios finales. Los elementos clave de esta vista son los proyectos Application, Domain, Identity, Persistence, Shared y WebApi.
+
+Application: Contiene la lógica de negocio y las definiciones de las operaciones que se pueden realizar en el sistema. Utiliza CQRS (Command Query Responsibility Segregation) y patrones de mediador a través de MediatR para manejar comandos y consultas.
+
+Domain: Define las entidades del dominio y las reglas de negocio asociadas. Incluye entidades como Cliente y AuditableBaseEntity, y configuraciones como JWTSettings.
+
+Identity: Gestiona la autenticación y autorización de usuarios, utilizando ASP.NET Core Identity y JWT (JSON Web Tokens) para la seguridad.
+
+Persistence: Proporciona la implementación de acceso a datos utilizando Entity Framework Core y configuraciones de entidades como ClienteConfig.
+
+Shared: Contiene servicios compartidos y extensiones utilizadas por otros proyectos, como DateTimeService.
+
+WebApi: Es la capa de presentación que expone la funcionalidad del sistema a través de una API REST. Utiliza controladores como WeatherForecastController y AccountController para manejar las solicitudes HTTP.

@@ -1,0 +1,31 @@
+Vista Física:
+La vista física describe cómo el sistema se despliega en el hardware. Aunque los detalles de despliegue no están completamente especificados en los archivos proporcionados, se puede inferir que la aplicación se ejecuta en un entorno de servidor web que soporta .NET, como IIS o Kestrel, y se conecta a bases de datos SQL Server para la persistencia de datos.
+
+Diagrama de despliegue 
+
+ServidorWeb es el servidor que aloja la aplicación WebApi.dll, que es el punto de entrada para las solicitudes de los clientes.
+BaseDeDatosSQL representa la base de datos SQL Server donde se almacenan los datos de la aplicación.
+ServidorDeIdentidad es el servidor que maneja la autenticación y autorización de los usuarios, utilizando Identity.dll.
+ServidorRedis es el sistema de almacenamiento en caché utilizado para mejorar el rendimiento de la aplicación.
+
+
+@startuml
+node "Servidor Web" {
+    [WebApi.dll]
+}
+node "Servidor de Identidad" {
+[Identity.dll]
+}
+
+node "Servidor Redis" {
+[Redis Cache]
+}
+
+database "Base de Datos SQL" {
+[SQL Database]
+}
+
+[WebApi.dll] --> [SQL Database] : Conexión a Base de Datos
+[WebApi.dll] --> [Identity.dll] : Autenticación y Autorización
+[WebApi.dll] --> [Redis Cache] : Caching
+@enduml
